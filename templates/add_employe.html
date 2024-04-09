@@ -1,0 +1,32 @@
+{% extends 'default.html' %}
+
+{% block title %} Ajout d'un Employé {% endblock %}
+
+{% block content %}
+
+<h1> Sentez vous comme chez vous !</h1>
+<form action="">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Nom" placeholder="">
+        <label for="Nom">Nom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Prenom" placeholder="Password">
+        <label for="Prenom">Prenom</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="mat">
+        <label for="mat">Matricule</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="Fction" placeholder="">
+        <label for="fction">fonction</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="deptmt" placeholder="deptmt">
+        <label for="deptmt">Departement</label>
+    </div>
+    <input type="button" value="ajouter l'employe" class="btn btn-success">
+</form>
+
+{% endblock %}

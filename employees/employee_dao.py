@@ -1,4 +1,8 @@
 import database
+#importation pour le test dans init.py
+#from employee import Employee
+#importation pour l'exterieur du package
+#from employees import Employee
 from employees.employee import Employee
 class EmployeeDAO:
 
