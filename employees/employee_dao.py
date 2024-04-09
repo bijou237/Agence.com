@@ -20,11 +20,17 @@ class EmployeeDAO:
 
     @classmethod
     def list_all(cls):
-        sql="SELECT * FROM employee "
-        EmployeeDAO.cursor.execute(sql)
-        employee = EmployeeDAO.cursor.fetchall()
-        EmployeeDAO.cursor.close()
-        return employee
+        sql="SELECT * FROM employ "
+        try:
+            EmployeeDAO.cursor.execute(sql)
+            employee = EmployeeDAO.cursor.fetchall()
+            message= "success"
+            EmployeeDAO.cursor.close()
+        except Exception as error:
+            print(error)
+            message = "Une erreur est survenue lors de la recuperation des donnés"
+            employee = []
+        return (employee, message)
 
     @classmethod
     def delete(cls, matricule):
