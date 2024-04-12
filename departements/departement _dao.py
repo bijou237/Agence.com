@@ -1,20 +1,17 @@
-import database
-#importation pour le test dans init.py
-#from employee import Employee
-#importation pour l'exterieur du package
-#from employees import Employee
+import database 
 from employees.employee import Employee
-class EmployeeDAO:
-
-    connexion = database.connect_db()
-    cursor=connexion.cursor()
-    def __init__(self):
+from employees.employee_dao import EmployeeDAO
+from departements.departement import Departement
+class Departement:
+     connexion = database.connect_db()
+     cursor=connexion.cursor()
+     def __init__(self):
         pass
 
-    @classmethod
-    def create(cls, emp:Employee):
-        sql = """INSERT INTO employee(matricule, nom, prenom, fonction, departement)
-                VALUES(%s, %s, %s, %s, %s)
+@classmethod
+def add(cls, dep:Employee):
+        sql = """INSERT INTO employee(matricule, username, password, post)
+                VALUES(%s, %s, %s, %s)
         """
         params = (emp.matricule, emp.nom, emp.prenom, emp.fonction, emp.departement)
         try :
@@ -27,8 +24,8 @@ class EmployeeDAO:
             message = "failure"
         return  message
 
-    @classmethod
-    def list_all(cls):
+@classmethod
+def list_all(cls):
         sql="SELECT * FROM employee "
         try:
             EmployeeDAO.cursor.execute(sql)
@@ -57,13 +54,3 @@ class EmployeeDAO:
         EmployeeDAO.cursor.excecute(sql, params)
         EmployeeDAO.connexion.commit()
         EmployeeDAO.cursor.close()
-
-
-
-
-    
-    
-    
-
-
-

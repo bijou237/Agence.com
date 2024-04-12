@@ -4,6 +4,11 @@
 
 {% block content %}
 
-<h1> Sentez vous comme chez vous!</h1>
+<h1>Bienvenu sur notre page d'accueil !</h1>
+
+{%if username in session%}
+<p>Bienvenue {{session['nom_complet']}}</p>
+{% endif %}
+
 
 {% endblock %}
