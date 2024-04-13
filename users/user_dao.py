@@ -25,4 +25,9 @@ class UserDAO:
     def add(cls, user: User):
         sql = "INSERT INTO user(nom_complet, username, password) VALUES(%s, %s, %s)"
         try:
-            UserDAO.cursor.execute(sql, (user.nom, nom_complet, ))
+            UserDAO.cursor.execute(sql, (user._nom_complet, user._username, user._password))
+            UserDAO.connexion.commit()
+            message = "success"
+        except Exception as error:
+            message = 'failure'
+        return message

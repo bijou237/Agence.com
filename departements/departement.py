@@ -1,41 +1,30 @@
 class Departement:
-    def __init__(self, finance, it, rh, projet):
-        self.__finance = finance
-        self.__it = it
-        self.__rh = rh
-        self.__Projet= projet 
+    def __init__(self, nom,emplacement,direction) -> None:
+        self.__nom = nom
+        self.__emplacement = emplacement
+        self.__direction = direction
 
     @property
-    def _finance(self):
-        return self.__finance
+    def _nom(self):
+        return self.__nom
 
-    @_finance.setter
-    def _finance(self, value):
-        self.__finance = value
-
-    @property
-    def _it(self):
-        return self.__it
-
-    @_it.setter
-    def _it(self, value):
-        self.__it = value
+    @_nom.setter
+    def _nom(self, value):
+        self.__nom = value
 
     @property
-    def _rh(self):
-        return self.__rh
+    def _emplacement(self):
+        return self.__emplacement
 
-    @_rh.setter
-    def _rh(self, value):
-        self.__rh = value
+    @_emplacement.setter
+    def _emplacement(self, value):
+        self.__emplacement = value
 
     @property
-    def _Projet(self):
-        return self.__Projet
+    def _direction(self):
+        return self.__direction
 
-    @_Projet.setter
-    def _Projet(self, value):
-        self.__Projet = value
+    @_direction.setter
+    def _direction(self, value):
+        self.__direction = value
 
-
-   

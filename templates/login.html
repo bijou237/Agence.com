@@ -20,7 +20,19 @@
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container">
+        {% if message=='error' %}
+            <p class="alert alert-danger">SVP veuillez saisir tous les champs pour vous connecter!</p>
+        {% elif message=='success' and user==None %}
+            <p class="alert alert-warning">
+                Username ou mot de passe incorrect
+            </p>
+        {% elif message=='failure' %}
+        <p  class="alert alert-danger">Une erreur est survenue, veuillez réessayer plus tard</p>    
+        {% endif %}
+    </div>
   </form>
 
 
 {% endblock %}
+
